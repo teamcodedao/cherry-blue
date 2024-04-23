@@ -6,7 +6,7 @@ import background from './background.png';
 
 export default function Home() {
   return (
-    <main className='relative min-h-screen'>
+    <main className='relative min-h-[900px]'>
       <Image
         src={background}
         quality={100}
@@ -15,7 +15,15 @@ export default function Home() {
         alt=''
         className='object-cover object-bottom blur-[5px]'
       />
-      <div className='absolute inset-0'>
+      <div className='absolute inset-0 flex flex-col'>
+        <div className='absolute bottom-1/3 left-1/2 -translate-x-1/2'>
+          <img src='/cherry-3.gif' alt='' className='w-[193px]' />
+          <img
+            src='/cherry-shadow.svg'
+            alt=''
+            className='absolute -bottom-10 left-1/2 -translate-x-1/2'
+          />
+        </div>
         <header className='container flex items-center gap-x-5 px-5 py-6 lg:px-0'>
           {/* Social */}
           <div
@@ -62,7 +70,7 @@ export default function Home() {
           </div>
         </div>
         <div className='relative'>
-          <div className='mt-7 bg-white py-5 lg:mt-9 lg:py-7'>
+          <div className='mt-7 overflow-hidden bg-white py-5 lg:mt-9 lg:py-7'>
             <Marquee autoFill>
               <span className='inline-block px-7 text-2xl font-medium text-primary lg:text-[32px]'>
                 $CHERRYB
@@ -75,6 +83,35 @@ export default function Home() {
               alt=''
               className='-mt-28 hidden max-w-[250px] sm:block md:max-w-[390px]'
             />
+          </div>
+        </div>
+        <div className='mt-auto flex justify-between overflow-hidden px-8'>
+          <div className='flex shrink-0 place-self-start self-end'>
+            <img
+              src='/cherry-4.gif'
+              alt=''
+              className='z-10 w-[338px] -scale-x-100 object-contain'
+            />
+            <div className='relative -ml-20'>
+              <img src='/think.svg' alt='' />
+              <h3 className='absolute -right-6 top-14 text-center text-[32px] font-medium uppercase text-secondary'>
+                supply: 420.000.000
+              </h3>
+            </div>
+          </div>
+          <div className='overflow-hidden'>
+            <div className='-mb-10 flex justify-center'>
+              <img src='/cherry-5.gif' alt='' className='w-[500px]' />
+            </div>
+            <footer
+              className={clsx(
+                'mb-14 rounded-full border-[3px] border-white bg-secondary px-4 py-3 text-base text-primary',
+                '[&_span]:text-xs'
+              )}
+            >
+              LP BURNT <span>•</span> No Tax <span>•</span> No Bullshit{' '}
+              <span>•</span> Renounced <span>•</span> 100% Defi Token
+            </footer>
           </div>
         </div>
       </div>
