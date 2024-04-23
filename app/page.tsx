@@ -38,6 +38,28 @@ export default function Home() {
             </span>
           </h1>
         </header>
+        <div className='flex items-center justify-between px-8'>
+          <img
+            src='/cherry-1.gif'
+            alt=''
+            className='-ml-10 -mt-20 max-w-[var(--s)] shrink basis-[var(--s)] -scale-x-100 [--s:218px]'
+          />
+          <div
+            className={clsx(
+              'flex shrink-0 flex-col gap-y-2 sm:gap-y-5',
+              '[&_a]:multi-[`block;bg-primary;border-[1px];border-white;px-5;py-3;rounded-[13px];text-lg;font-medium;transition`]',
+              'sm:[&_a]:multi-[`px-7;py-4;text-xl`]',
+              'hover:[&_a]:multi-[`bg-white;border-primary;text-primary`]'
+            )}
+          >
+            <a href={process.env.NEXT_PUBLIC_COIN_URL} target='_buy'>
+              BUY $CHERRY
+            </a>
+            <a href='/' target='_buy'>
+              LiNK SOCiAl
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );

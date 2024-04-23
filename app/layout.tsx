@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={clsx(font.className, inter.className)}>{children}</body>
+      <body className={clsx(font.className, inter.variable)}>{children}</body>
     </html>
   );
 }
