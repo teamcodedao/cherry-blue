@@ -20,6 +20,19 @@ export default function Home() {
       })();
     }
   }, []);
+
+  const supplyRef = useCallback<(node: unknown) => void>(node => {
+    if (node instanceof HTMLElement) {
+      (async () => {
+        const {TxtAnime} = await import('txtanime.js');
+        new TxtAnime(node, {
+          effect: 'txt-an-9',
+          text: ['100', '350', '400', '420'],
+        });
+      })();
+    }
+  }, []);
+
   return (
     <main className='relative min-h-[1000px] lg:min-h-[1100px]'>
       <Image
@@ -109,8 +122,15 @@ export default function Home() {
             />
             <div className='relative -ml-20 shrink-0'>
               <img src='/think.svg' alt='' />
-              <h3 className='absolute -right-6 top-14 text-center text-[32px] font-medium uppercase text-secondary'>
-                supply: 420.000.000
+              <h3 className='absolute right-10 top-14 text-center text-[32px] font-medium uppercase text-secondary'>
+                <p>supply:</p>
+                <div>
+                  <p className='flex'>
+                    <span ref={supplyRef}></span>
+                    <span>.000.000</span>
+                  </p>
+                  <p className='invisible'>420.000.000</p>
+                </div>
               </h3>
             </div>
           </div>
