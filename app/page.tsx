@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import clsx from 'clsx';
+import Marquee from 'react-fast-marquee';
 
 import background from './background.png';
 
@@ -58,6 +59,22 @@ export default function Home() {
             <a href='/' target='_buy'>
               LiNK SOCiAl
             </a>
+          </div>
+        </div>
+        <div className='relative'>
+          <div className='mt-7 bg-white py-5 lg:mt-9 lg:py-7'>
+            <Marquee autoFill>
+              <span className='inline-block px-7 text-2xl font-medium text-primary lg:text-[32px]'>
+                $CHERRYB
+              </span>
+            </Marquee>
+          </div>
+          <div className='absolute inset-0 z-10 flex items-center justify-center'>
+            <img
+              src='/cherry-2.gif'
+              alt=''
+              className='-mt-28 hidden max-w-[250px] sm:block md:max-w-[390px]'
+            />
           </div>
         </div>
       </div>
