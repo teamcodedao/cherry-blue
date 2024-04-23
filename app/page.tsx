@@ -2,11 +2,13 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import Marquee from 'react-fast-marquee';
 
+import Scale from './scale';
+
 import background from './background.png';
 
 export default function Home() {
   return (
-    <main className='relative min-h-[900px]'>
+    <main className='relative min-h-[1000px] lg:min-h-[1100px]'>
       <Image
         src={background}
         quality={100}
@@ -16,7 +18,7 @@ export default function Home() {
         className='object-cover object-bottom blur-[5px]'
       />
       <div className='absolute inset-0 flex flex-col'>
-        <div className='absolute bottom-1/3 left-1/2 -translate-x-1/2'>
+        <div className='absolute bottom-[40%] left-1/2 -translate-x-1/2'>
           <img src='/cherry-3.gif' alt='' className='w-[193px]' />
           <img
             src='/cherry-shadow.svg'
@@ -28,7 +30,7 @@ export default function Home() {
           {/* Social */}
           <div
             className={clsx(
-              'mr-auto flex shrink-0 gap-x-3',
+              'relative z-20 mr-auto flex shrink-0 gap-x-3',
               '[&_a]:multi-[`bg-white;border-[3px];border-primary;rounded-xl;px-2;py-2;transition`]',
               'hover:[&_a]:multi-[`bg-primary;border-white;[&_img]:invert-svg`]'
             )}
@@ -47,7 +49,7 @@ export default function Home() {
             </span>
           </h1>
         </header>
-        <div className='flex items-center justify-between px-8'>
+        <div className='relative z-10 flex items-center justify-between px-8'>
           <img
             src='/cherry-1.gif'
             alt=''
@@ -85,28 +87,35 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className='mt-auto flex justify-between overflow-hidden px-8'>
-          <div className='flex shrink-0 place-self-start self-end'>
+        <Scale min={0.6}>
+          <div className='absolute -left-10 bottom-5 flex origin-left'>
             <img
               src='/cherry-4.gif'
               alt=''
               className='z-10 w-[338px] -scale-x-100 object-contain'
             />
-            <div className='relative -ml-20'>
+            <div className='relative -ml-20 shrink-0'>
               <img src='/think.svg' alt='' />
               <h3 className='absolute -right-6 top-14 text-center text-[32px] font-medium uppercase text-secondary'>
                 supply: 420.000.000
               </h3>
             </div>
           </div>
-          <div className='overflow-hidden'>
-            <div className='-mb-10 flex justify-center'>
-              <img src='/cherry-5.gif' alt='' className='w-[500px]' />
+        </Scale>
+        <div className='mt-auto flex justify-center overflow-hidden md:justify-end'>
+          <div className='overflow-hidden px-2 md:pl-0 md:pr-8'>
+            <div className='-mb-10 flex justify-end'>
+              <img
+                src='/cherry-5.gif'
+                alt=''
+                className='w-[300px] sm:w-[400px] lg:w-[500px]'
+              />
             </div>
             <footer
               className={clsx(
-                'mb-14 rounded-full border-[3px] border-white bg-secondary px-4 py-3 text-base text-primary',
-                '[&_span]:text-xs'
+                'mb-8 rounded-full border-[3px] border-white bg-secondary px-4 py-3 text-sm text-primary',
+                '[&_span]:text-xs',
+                'lg:multi-[`text-base;mb-14`]'
               )}
             >
               LP BURNT <span>•</span> No Tax <span>•</span> No Bullshit{' '}
