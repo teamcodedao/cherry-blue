@@ -15,6 +15,7 @@
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.4",
     "tailwindcss-multi": "^0.3.34",
+    "txtanime.js": "^1.7.0",
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {

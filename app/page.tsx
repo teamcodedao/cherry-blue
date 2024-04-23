@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import clsx from 'clsx';
 import Marquee from 'react-fast-marquee';
@@ -5,8 +7,19 @@ import Marquee from 'react-fast-marquee';
 import Scale from './scale';
 
 import background from './background.png';
+import {useCallback} from 'react';
 
 export default function Home() {
+  const footerTextRef = useCallback<(node: unknown) => void>(node => {
+    if (node instanceof HTMLElement) {
+      (async () => {
+        const {TxtAnime} = await import('txtanime.js');
+        new TxtAnime(node, {
+          effect: 'txt-an-3',
+        });
+      })();
+    }
+  }, []);
   return (
     <main className='relative min-h-[1000px] lg:min-h-[1100px]'>
       <Image
@@ -112,14 +125,17 @@ export default function Home() {
               />
             </div>
             <footer
+              ref={footerTextRef}
               className={clsx(
                 'mb-8 rounded-full border-[3px] border-white bg-secondary px-4 py-3 text-sm text-primary',
-                '[&_span]:text-xs',
+                '[&_small]:text-xs',
                 'lg:multi-[`text-base;mb-14`]'
               )}
             >
-              LP BURNT <span>•</span> No Tax <span>•</span> No Bullshit{' '}
-              <span>•</span> Renounced <span>•</span> 100% Defi Token
+              <span>LP BURNT</span> <small>•</small> <span>No Tax</span>{' '}
+              <small>•</small> <span>No Bullshit</span> <small>•</small>{' '}
+              <span>Renounced</span> <small>•</small>{' '}
+              <span>100% Defi Token</span>
             </footer>
           </div>
         </div>

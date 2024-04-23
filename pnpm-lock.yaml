@@ -23,6 +23,9 @@ dependencies:
   tailwindcss-multi:
     specifier: ^0.3.34
     version: 0.3.34
+  txtanime.js:
+    specifier: ^1.7.0
+    version: 1.7.0
   usehooks-ts:
     specifier: ^3.1.0
     version: 3.1.0(react@18.2.0)
@@ -1446,6 +1449,10 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
+  /gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+    dev: false
+
   /has-bigints@1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
     dev: true
@@ -2613,6 +2620,12 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: false
+
+  /txtanime.js@1.7.0:
+    resolution: {integrity: sha512-PhFoeK/z/vF2VkG2YfQKETOMeBfMb+G6kNjW59TFINf+8zZuYE3H2xm2lnbYfySM9MsirEuny/hMPqY7saonpA==}
+    dependencies:
+      gsap: 3.12.5
     dev: false
 
   /type-check@0.4.0:
